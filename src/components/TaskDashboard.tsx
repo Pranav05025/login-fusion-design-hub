@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,7 +8,7 @@ import TaskCard, { Task } from './TaskCard';
 import TaskForm from './TaskForm';
 import Logo from './Logo';
 import { toast } from '@/hooks/use-toast';
-import { Plus, Search, LogOut, BarChart3 } from 'lucide-react';
+import { Plus, Search, LogOut, BarChart3, CheckSquare, Circle, X } from 'lucide-react';
 
 interface TaskDashboardProps {
   onLogout: () => void;
