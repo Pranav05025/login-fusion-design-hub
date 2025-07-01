@@ -9,12 +9,11 @@ import TaskForm from './TaskForm';
 import Logo from './Logo';
 import { toast } from '@/hooks/use-toast';
 import { Plus, Search, LogOut, BarChart3, CheckSquare, Circle, X } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
-interface TaskDashboardProps {
-  onLogout: () => void;
-}
-
-const TaskDashboard = ({ onLogout }: TaskDashboardProps) => {
+const TaskDashboard = () => {
+  const { signOut } = useAuth();
+  
   const [tasks, setTasks] = useState<Task[]>([
     {
       id: '1',
@@ -122,6 +121,14 @@ const TaskDashboard = ({ onLogout }: TaskDashboardProps) => {
     setShowForm(true);
   };
 
+  const handleLogout = async () => {
+    await signOut();
+    toast({
+      title: "Signed Out",
+      description: "You have been successfully signed out.",
+    });
+  };
+
   if (showForm) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-4">
@@ -156,7 +163,7 @@ const TaskDashboard = ({ onLogout }: TaskDashboardProps) => {
                 New Task
               </Button>
               
-              <Button variant="outline" onClick={onLogout}>
+              <Button variant="outline" onClick={handleLogout}>
                 <LogOut className="w-4 h-4 mr-2" />
                 Logout
               </Button>
@@ -165,7 +172,6 @@ const TaskDashboard = ({ onLogout }: TaskDashboardProps) => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
