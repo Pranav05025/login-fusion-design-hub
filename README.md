@@ -1,8 +1,7 @@
-# Welcome to your Lovable project
 
-## Project info
+## uploaded video for project login-fusion-design-hub 
 
-**URL**: https://lovable.dev/projects/11f585e6-0b42-48a4-941e-c2c66c891e33
+https://drive.google.com/file/d/1WOBSFigZKYCZwivDbHrelbvaxVbB1vw0/view?usp=sharing
 
 ## How can I edit this code?
 
